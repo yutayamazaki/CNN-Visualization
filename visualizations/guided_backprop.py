@@ -72,5 +72,5 @@ if __name__ == '__main__':
     img = gbp_model.prepare_torch_input('../img/Abyssinian_1.jpg')
     guided_img = gbp_model(img)
     plt.imshow(guided_img)
-    plt.savefig('../img/guided_backprop_image.png')
+    plt.savefig('../img/guided_backprop.png')
     plt.show()
