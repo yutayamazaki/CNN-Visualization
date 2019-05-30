@@ -65,11 +65,12 @@ class GuidedBackpropagation:
 
 if __name__ == '__main__':
     gbp_model = GuidedBackpropagation(
-        model=torchvision.models.resnet18(pretrained=True),
+        model=torchvision.models.resnet34(pretrained=True),
         use_cuda=True
     )
 
     img = gbp_model.prepare_torch_input('Abyssinian_1.jpg')
     guided_img = gbp_model(img)
     plt.imshow(guided_img)
+    plt.savefig('guided_backprop_image.png')
     plt.show()
