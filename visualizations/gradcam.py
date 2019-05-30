@@ -3,14 +3,11 @@ import os
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
-from PIL import Image
 import torch
 from torch.autograd import Variable
 import torchvision
 
 import config
-
-__all__ = ['GradCam', 'preprocess_image', 'concat_mask']
 
 
 class FeatureExtractor:

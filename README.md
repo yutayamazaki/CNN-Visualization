@@ -1,6 +1,9 @@
-# Guided-Backpropagation-PyTorch
+## Grad-CAM
+[Grad-CAM](https://arxiv.org/abs/1610.02391)
+![gradcam](https://user-images.githubusercontent.com/37947061/58630488-85483100-831a-11e9-8731-c749429bc209.png)
 
-Implementation of [Guided-Backpropagation](https://arxiv.org/abs/1412.6806)
 
-![Abyssinian_1](https://user-images.githubusercontent.com/37947061/58625761-18c73500-830e-11e9-8a3e-7c4c50def36a.jpg)
-![guided_backprop_image](https://user-images.githubusercontent.com/37947061/58625776-22e93380-830e-11e9-875f-a9a202ce5fb1.png)
+## Guided-Backpropagation
+[Guided-Backpropagation](https://arxiv.org/abs/1412.6806)
+
+![guided_backprop](https://user-images.githubusercontent.com/37947061/58630706-39e25280-831b-11e9-95c6-015a777bbca3.png)

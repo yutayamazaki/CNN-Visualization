@@ -1,3 +1,5 @@
+import os
+
 import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
@@ -6,10 +8,12 @@ import torch.nn as nn
 import torchvision
 from torchvision import transforms
 
+import config
+
 
 class GuidedBackpropagation:
 
-    def __init__(self, model, img_size=224, transform=None, use_cuda=False):
+    def __init__(self, model, img_size=config.IMG_SIZE, transform=None, use_cuda=False):
         self.model = model.eval()
         self.use_cuda = use_cuda
         if self.use_cuda:
@@ -68,9 +72,16 @@ if __name__ == '__main__':
         model=torchvision.models.resnet34(pretrained=True),
         use_cuda=True
     )
-
-    img = gbp_model.prepare_torch_input('../img/Abyssinian_1.jpg')
+    img_path = os.path.join(config.IMG_DIR, config.SAMPLE_IMG)
+    img = gbp_model.prepare_torch_input(img_path)
     guided_img = gbp_model(img)
+
+    fig = plt.figure()
+    ax1 = fig.add_subplot(1, 2, 1)
+    plt.imshow(Image.open(img_path).resize((config.IMG_SIZE, config.IMG_SIZE)))
+
+    save_img_path = os.path.join(config.IMG_DIR, 'guided_backprop.png')
+    ax2 = fig.add_subplot(1, 2, 2)
     plt.imshow(guided_img)
-    plt.savefig('../img/guided_backprop.png')
+    plt.savefig(save_img_path)
     plt.show()
